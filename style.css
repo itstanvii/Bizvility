@@ -1,0 +1,757 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.full_container{
+    display: flex;
+    flex-wrap: nowrap;
+    /* background-color: #f1f1f1; */
+    min-height: 100vh;
+}
+.left_container{
+    width: 400px;
+    /* height: 100%; */
+
+    color: white;
+    transition: width 0.3s;
+    
+}
+.sidebar{ 
+    width: 400px;
+    height: 100%;
+    background-image: url(images/pattern.png);
+    background-color: #15283c;
+    position: fixed;
+    transition: transform 0.3s;
+    transform: translateX(-400px);
+    overflow-y:scroll ;
+    /* transition: left 0.3s; */
+}
+.sidebar.active{
+   transform: translateX(0);
+}
+.right_container{
+    flex: 1;
+    transition: margin-left 0.3s;
+    /* width: 80%;
+    height: 100%; */
+    background-color: #f1f1f1;
+    color: #15283c;
+    margin-top: 100px;
+      
+        width: calc(100% - 400px); /* Adjust width when sidebar is visible */
+        margin-left: 0; /* Ensure no extra margin */
+      
+}
+.right_container.expanded {
+    width: calc(100% - 400px);
+}
+.navbutton{
+    color: white;
+    background-color: #FF5722;
+    height: 100px;
+    width: 100px;
+    font-size: 44px;
+    border: none;
+    padding: 14px 26px;
+    cursor: pointer;
+    position: fixed;
+    
+}
+.sidebar1{
+    background: #214162;
+    width: 100%;
+}
+.user_info{
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    font-size: 27px;
+    width: 100%;
+}
+.user_info img{
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+}
+.user_info span{
+  font-weight: 500;
+}
+.name{
+    display: block;
+    padding-top: 20px;
+}
+.online{
+    display: flex;
+    gap: 0px;
+    padding-top: 10px;
+    color: #1ED085;
+    font-size: 22px;
+}
+.online_animation{
+    background-color: #1ED085;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-top: 2px;
+    margin-right: 5px;
+    
+    animation: animate  1s linear infinite;
+}
+@keyframes animate{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1 ;
+    }
+    
+}
+
+
+
+.sidebar h4{
+    border-bottom:1px solid #FF5722;
+    padding: 30px;
+    font-size: 35px;
+    margin: 0;
+    text-align: justify;
+    width: auto;
+}
+.sidebar2{
+  border: none;
+  outline: none;
+
+}
+.sidebarlist{
+    display: block;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+   
+}
+.sidebarlist li{
+    padding: 20px;
+    margin-bottom: 20px;
+    
+}
+.sidebarlist li a{
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+}
+.sidebarlist li a i{
+    margin-right: 30px;
+    width: 15px;
+    font-size: 30px;
+
+}
+.dropdown_icon_content{
+    display: none;
+    position: absolute;
+    /* background-color: #f1f1f1; */
+    margin-top: 0px;
+    margin-left: 130px;
+    min-width: 100px;
+}
+.dropdown_icon_content a{
+    display: block;
+     color: #FF5722 !important;
+    padding: 1px 5px;
+    text-decoration: none;
+    font-size: 20px; 
+}
+.dropdown_icon_content a:hover{
+    background-color: #FF5722;
+    color: white !important;
+    padding: 1px 5px;
+}
+.show_add{
+    display: flex;
+
+}
+.navbar{
+    background-color: #15283c;
+    color: white;
+    padding: 0;
+    margin: 0;
+    /* text-align: center; */
+    position: fixed;
+    height: 100px;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+}
+.leftnav{
+    float: left;
+    margin-left: 0px;
+    display: flex;
+}
+
+.logo img{
+  height: 85px;
+    width: 380px;
+   padding-top: 13px;
+   margin-left: 100px;
+   background: none;
+}
+.rightnav{
+    float: right;
+    margin-right: 0px;
+    display: flex;
+    gap: 30px;
+}
+ul.icons{
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    overflow: hidden;
+  
+}
+ul.icons li{
+    display: inline;
+    font-size: 38px;
+    margin-right: 20px;
+}
+.userprofile{
+    position: relative;
+    display: inline-block;
+}
+.userbutton{
+  background-color: #FF5722;
+  border: none;
+  height: 100px;
+  width: 250px;
+  font-size: 25px;
+  display: flex;
+  gap: 10px;
+  padding-top: 30px;
+  color: white;
+  cursor: pointer;
+}
+.userbutton img{
+  
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 26px;
+}
+.userbutton span{
+   padding-top: 10px;
+   margin: 0px;
+}
+.dropdown-content{
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+}
+.dropdown-content a{
+    color: #15283c;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+}
+.dropdown-content a:hover{
+    background-color: #15283c;
+    color: white;
+    padding: 12px 16px;
+ 
+}
+
+.show{
+    display: block;
+}
+.title{
+    height: 70px;
+    background-color:#fff;
+    padding: 15px 58px;
+    margin-top: 0px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+.title h2{
+    font-size: 50px;
+    text-align: left;
+    color: #15283c;
+    font-weight: 300;
+}
+.card_row{
+    display:flex;
+    gap: 60px;
+    margin: 60px 120px;
+}
+.card{
+    background-color: #fff;
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+}
+.card_icon{
+    font-size: 75px;
+}
+.card_no{
+    font-size: 45px;
+    color: #455A64;
+}
+.card_title{
+    font-weight: 300;
+    font-size: 22px;
+    color: #99abb4;
+}
+@media screen and (min-width: 1200px) and (max-width: 1700px) {
+    .right_container {
+      transition: margin-left 0.3s, width 0.3s; /* Added transition for width change */
+      width: calc(100% - 400px); /* Adjust width when sidebar is visible */
+      margin-left: 0; /* Ensure no extra margin */
+    }
+  
+    .left_container {
+      width: 400px; /* Fixed width for the sidebar */
+    }
+  
+    .sidebar {
+      width: 400px; /* Fixed width for the sidebar */
+      transform: translateX(-400px); /* Shift the sidebar off-screen when not active */
+    }
+  
+    .sidebar.active {
+      transform: translateX(0); /* Shift the sidebar back when active */
+    }
+  
+    .right_container.expanded {
+      width: calc(100% - 400px); /* Adjust width when the sidebar is expanded */
+      margin-left: 400px; /* Push the right container to the right when the sidebar is expanded */
+    }
+  
+    .userprofile {
+      display: none;
+    }
+  
+    .user_info {
+      font-size: 22px;
+      padding: 10px;
+    }
+  
+    .user_info img {
+      height: 80px;
+      width: 80px;
+    }
+  
+    .online {
+      font-size: 18px;
+    }
+  
+    .online_animation {
+      height: 15px;
+      width: 15px;
+    }
+  
+    .sidebar h4 {
+      font-size: 30px;
+      padding: 20px;
+    }
+  
+    .sidebarlist {
+      padding-left: 5px;
+    }
+  
+    .sidebarlist li {
+      padding: 15px;
+    }
+  
+    .sidebarlist li a {
+      font-size: 20px;
+    }
+  
+    .sidebarlist li a i {
+      margin-right: 18px;
+      font-size: 25px;
+    }
+  
+    .navbar {
+      height: 80px;
+    }
+  
+    .navbutton {
+      height: 80px;
+      width: 80px;
+      font-size: 38px;
+      padding: 10px 20px;
+    }
+  
+    .logo img {
+      height: 75px;
+      width: 300px;
+      padding: 8px;
+      margin-left: 70px;
+    }
+  
+    ul.icons li {
+      font-size: 30px;
+    }
+  
+    ul.icons {
+      padding: 20px;
+    }
+  
+    .userbutton {
+      height: 80px;
+      width: 200px;
+      font-size: 20px;
+      padding-top: 20px;
+    }
+  
+    .userbutton img {
+      height: 40px;
+      width: 40px;
+      margin-left: 15px;
+    }
+  
+    .userbutton span {
+      font-size: 20px;
+    }
+  }
+
+@media screen  and (min-width: 768px) and (max-width: 1199px){
+    .navbar{
+        height: 70px;
+    }
+    .logo img{
+        height: 65px;
+        width: 220px;
+        padding:5px;
+        margin-left: 60px;
+    }
+    .navbutton{
+        height: 70px;
+        width: 70px;
+        font-size:28px ;
+        padding: 10px 20px;
+    }
+    ul.icons li{
+        font-size: 24px;
+    }
+    ul.icons{
+        padding: 20px;
+    }
+    .userprofile{
+        display: none;
+    }
+    .user_info{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .user_info img{
+        height: 70px;
+        width: 70px;
+    }
+    .online{
+        font-size: 16px;
+    }
+    .userbutton{
+        height: 70px;
+        width: 200px;
+        font-size: 20px;
+        padding-top: 20px;
+    }
+    .userbutton img{
+        height: 40px;
+        width: 40px;
+        margin-left: 15px;
+    }
+   
+    ul.sidebarlist {
+        padding-left: 5px;
+    }
+   
+    .sidebar h4{
+        font-size: 30px;
+        padding: 20px;
+    }
+    .sidebarlist li{
+        padding: 15px;
+    }
+    .sidebarlist li a{
+        font-size: 20px;
+    }
+    .sidebarlist li a i{
+        margin-right: 18px;
+        font-size: 25px;
+    }
+    .card_row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: justify;
+        gap: 50px;
+        width: 100%;
+        margin: 60px 3px;
+    }
+    .card{
+        width: calc(40% - 5px);
+        margin: 5px;
+       height: 115px;
+        padding: 15px;
+    }
+    .card_icon{
+        float: left;
+        font-size: 45px;
+    }
+    .card_left{
+        display: block;
+    }
+    
+    .card_no{
+        font-size: 24px;
+    }
+    .card_title{
+        font-size: 18px;
+      
+    }
+    .title{
+        height: 80px;
+        background-color:#fff;
+        padding: 15px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+   
+}
+@media screen and (min-width: 520px) and (max-width: 767px){
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .userprofile{
+        display: none;
+    }
+    .navbar{
+        height: 60px;
+    }
+    .logo img{
+        height: 60px;
+        width: 220px;
+        margin-left: 35px;
+        padding: 4px;
+    }
+    .navbutton{
+        height: 60px;
+        width: 40px;
+        font-size:25px ;
+        padding: 10px 10px;
+    }
+    ul.icons li{
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    ul.icons{
+        padding: 20px 5px;
+    }
+    
+    .user_info{
+        font-size: 18px;
+        padding: 10px;
+    }
+    .user_info img{
+        height: 60px;
+        width: 60px;
+    }
+    .sidebar.active .icons{
+        display: none;
+    }
+    .online{
+        font-size: 14px;  
+    }
+    .online_animation{
+        height: 10px;
+        width: 10px;
+    }
+
+    ul.sidebarlist {
+        padding-left: 1px;
+    }
+    .sidebar h4{
+        font-size: 30px;
+        padding: 20px;
+    }
+    .sidebarlist li{
+        padding: 9px;
+    }
+    .sidebarlist li a{
+        font-size: 22px;
+    }
+    .sidebarlist li a i{
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    .card_row{
+        display: block;
+        margin: 20px;
+    }
+    .card{
+        width: 80%;
+        height: 100px;
+        padding: 30px;
+        margin: 20px 0;
+    }
+    .card_icon{
+        float: left;
+        font-size: 50px;
+    }
+    .card_no{
+        font-size: 30px;
+    }
+    .card_title{
+        font-size: 20px;
+    }
+    .title{
+        height: 35px;
+        padding-left: 15px;
+        margin: 0px;
+    }
+    .title h2{
+        font-size: 35px;
+        padding: 0;
+        margin: 0;
+    }
+    
+}
+
+@media screen and (max-width:519px) {
+    .right_container {
+        transition: margin-left 0.3s, width 0.3s; 
+        width: calc(100% - 250px); 
+        margin-left: 0; 
+      }
+    .left_container{
+        width: 250px;
+    }
+    .sidebar{
+        width: 250px;
+        transform: translateX(-300px);
+    }
+    .sidebar.active{
+        transform: translateX(0);
+    }
+    .right_container.expanded {
+        width: calc(100% - 250px); 
+        margin-left: 250px; 
+      }
+    .logo img{
+            height: 55px;
+            width: 180px;
+            padding:5px;
+            margin-left: 35px;
+        
+    }
+    .sidebar1{
+        background: #214162;
+        width: 100%;
+        height: 80px;
+    }
+    
+    .userprofile{
+        display: none;
+    }
+    .navbar{
+        height: 60px;
+    }
+    .navbutton{
+        height: 60px;
+        width: 40px;
+        font-size:25px ;
+        padding: 10px 10px;
+    }
+    .navbar .navbutton{
+        display: block;
+    }
+    ul.icons li{
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    ul.icons{
+        padding: 20px 5px;
+    }
+    
+    
+    .user_info{
+        font-size: 18px;
+        padding: 10px;
+    }
+    .user_info img{
+        height: 60px;
+        width: 60px;
+    }
+    .online{
+        font-size: 14px;  
+    }
+    .online_animation{
+        height: 10px;
+        width: 10px;
+    }
+    
+    ul.sidebarlist {
+        padding-left: 1px;
+    }
+    .sidebar h4{
+        font-size: 30px;
+        padding: 20px;
+    }
+    .sidebarlist li{
+        padding: 9px;
+    }
+    .sidebarlist li a{
+        font-size: 22px;
+    }
+    .sidebarlist li a i{
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    .title{
+        height: 25px;
+        padding-top: 2px;
+        padding-left: 15px;
+        margin: 0px;
+    }
+    .title h2{
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+    }
+    .card_row{
+        display: block;
+        margin: 20px;
+    }
+    .card{
+        width: 80%;
+        height: 105px;
+        padding: 16px;
+        margin: 20px 0;
+    }
+    .card_icon{
+        float: left;
+        font-size: 45px;
+    }
+    .card_left{
+        display: block;
+    }
+    .card_no{
+        font-size: 30px;
+    }
+    .card_title{
+        font-size: 20px;
+    }
+   
+}

@@ -1,0 +1,111 @@
+.mainsec{
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 80px;
+}
+.heading{
+    font-size: 62px;
+    font-weight: 800;
+    margin: 50px;
+    color: #aa3370;
+}
+table{
+  
+    width: 90%;
+    border-collapse: collapse;
+   
+}
+ tr{
+   border: none;
+    border-bottom: 1px solid #f1f1f1;
+}
+.headrow{
+    font-weight: 900;
+    font-size: 83px !important;
+    background: linear-gradient(#dc0f79, #9f00b2);
+
+}
+td{
+   padding: 20px;
+   font-size: 32px;
+}
+.rows{
+    background-color:#f1f1f1;
+}
+
+.rows:hover
+{
+    color: white;
+    background: linear-gradient(#e94f8d, #aa00a2); /
+}
+.view:hover{
+    color: #0f52b9	;
+    transform: translateX(10px);
+    text-decoration: underline ;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+  
+@media screen and (min-width:1200px) and (max-width:1700px){
+    .heading{
+        font-size: 52px;
+    }
+    td{
+        padding: 15px;
+        font-size: 24px;
+    }
+    .headrow{
+        font-weight: 700;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1199px){
+    .mainsec{
+        margin-left: 30px;
+    }
+    .heading{
+        font-size: 42px;
+    }
+    tr{
+        font-size: 20px;
+    }
+    td{
+        padding: 12px;
+        font-size: 24px;
+    }
+    .headrow{
+        font-weight: 600;
+    }
+    .signup {
+        overflow-x:scroll ;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .mainsec{
+        margin-left: 5px;
+    }
+    .heading{
+        font-size: 22px;
+        margin: 10px 5px;
+    }
+    tr{
+        font-size: 15px;
+    
+    }
+    td{
+        padding: 5px;
+        font-size: 12px;
+    }
+    .headrow{
+        font-weight: 600;
+    }
+    .signup {
+        overflow-x:scroll ;
+    }
+    .video{
+        overflow-x: scroll;
+    }
+    
+
+    }
